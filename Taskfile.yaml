@@ -28,6 +28,7 @@ vars:
   #
   # DOCKER
   DOCKER: docker
+  DOCKER_FILE: docker-compose.yml
   DOCKER_RUN: "{{.DOCKER}} run"
   DOCKER_COMPOSE: "{{.DOCKER}} compose"
   #
@@ -57,6 +58,11 @@ tasks:
       - echo "----------------------------------------------"
       - task --list
 
+  update:
+    desc: "Update taskfile config in your project"
+    cmds:
+      - curl -fsS {{.REPOSITORY}}/{{.ENV}}/Taskfile.yaml > Taskfile.yaml
+      - task: help
   ## === ⚙️ INTERFACES ================================================
 
   # TODO Replace "unknown" -> exit 1
