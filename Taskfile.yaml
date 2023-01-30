@@ -75,13 +75,13 @@ tasks:
         read CONFIRM
         case $CONFIRM in 
           mariadb)
-            task create-mariadb-env;;
+            task dc:create-mariadb-env;;
           mysql5)
-            task create-mysql5-env;;
+            task dc:create-mysql5-env;;
           mysql8)
-            task create-mysql8-env;;
+            task dc:create-mysql8-env;;
           mongodb)
-            task create-mongo-env;;
+            task dc:create-mongo-env;;
           *)
             exit 1;;
         esac
@@ -94,13 +94,13 @@ tasks:
       - |
         case {{.CLI_ARGS}} in 
           mariadb)
-            task create-mariadb-env;;
+            task dc:create-mariadb-env;;
           mysql5)
-            task create-mysql5-env;;
+            task dc:create-mysql5-env;;
           mysql8)
-            task create-mysql8-env;;
+            task dc:create-mysql8-env;;
           mongodb)
-            task create-mongodb-env;;
+            task dc:create-mongodb-env;;
           *)
             exit 1;;
         esac
